@@ -27,8 +27,13 @@ namespace UnityEngine.XR.Interaction.Toolkit
 
         private void Update()
         {
-            if(secondInteractor != null)
+            foreach(XRSimpleInteractable interactable in secondHandGrabPoints)
             {
+                if(secondInteractor != null)
+                {
+                    interactable.gameObject.transform.position = secondInteractor.gameObject.transform.position;
+                    transform.rotation = Quaternion.LookRotation(interactable.gameObject.transform.position);
+                }
                 
             }
         }
