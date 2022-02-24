@@ -9,6 +9,7 @@ public class WeaponFire : MonoBehaviour
     private GameObject m_BulletHolder;
     private float m_BulletLifeTime = 3f;
     private bool m_CanShoot = true;
+
     public void OnActivated()
     {
         if(m_CanShoot)

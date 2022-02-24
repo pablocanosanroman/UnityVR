@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class TextDisappear : MonoBehaviour
 {
     private float m_TextLifeTime = 5f;
-    void Start()
+    [SerializeField] private GameObject m_TextObject;
+
+    
+    private void Update()
     {
-        StartCoroutine(TextDestroy());
+        if(m_TextObject.GetComponent<Renderer>().isVisible)
+        {
+            StartCoroutine(TextDestroy());
+        }
     }
 
     IEnumerator TextDestroy()
