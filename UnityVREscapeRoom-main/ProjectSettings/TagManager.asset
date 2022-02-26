@@ -10,17 +10,17 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - AnimationStart
   - Water
   - UI
   - SecondHandGrab
-  - 
+  - BinEventActivator
   - Grabbable
   - Hands
   - Teleporter
   - NoHandCollide
-  - 
-  - 
+  - Bullet
+  - AnimationEnd
   - 
   - 
   - 
