@@ -9,8 +9,8 @@ namespace UnityEngine.XR.Interaction.Toolkit
         [SerializeField] private GameObject m_ObjectToBeTracked;
         [SerializeField] private XRGrabInteractable m_ObjectGrabbed;
         private Coroutine m_CoroutineHolder;
-        private Vector3 m_DefaulPosition;
-        private Quaternion m_DefaultRotaton;
+        [SerializeField] private Vector3 m_DefaulPosition;
+        [SerializeField] private Quaternion m_DefaultRotaton;
         private bool m_HasBeenGrabbed = false;
         private bool m_HasBeenReleased = false;
         private bool m_IsReleased = false;
@@ -18,8 +18,6 @@ namespace UnityEngine.XR.Interaction.Toolkit
 
         private void Start()
         {
-            m_DefaulPosition = new Vector3(1.175f, 1.121f, -1.228f);
-            m_DefaultRotaton = new Quaternion(-5.389f, 180f, 0f, 0f);
             m_CoroutineHolder = null;
         }
 
