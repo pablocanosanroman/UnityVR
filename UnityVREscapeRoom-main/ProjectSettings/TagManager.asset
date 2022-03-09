@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ignite
   - Gun
+  - Hand
+  - Interruptor
   layers:
   - Default
   - TransparentFX
@@ -21,9 +23,9 @@ TagManager:
   - NoHandCollide
   - Bullet
   - AnimationEnd
-  - 
-  - 
-  - 
+  - Key
+  - KeyHolder
+  - Hand
   - 
   - 
   - 
