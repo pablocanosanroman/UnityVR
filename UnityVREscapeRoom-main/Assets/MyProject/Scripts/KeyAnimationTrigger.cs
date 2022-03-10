@@ -7,8 +7,10 @@ namespace UnityEngine.XR.Interaction.Toolkit
     public class KeyAnimationTrigger : MonoBehaviour
     {
         [SerializeField] private GameObject m_Key;
+        [SerializeField] private Transform m_AttachPoint;
         [SerializeField] private Animator m_DoorAnimator;
         [SerializeField] private Animator m_KeyAnimator;
+        [SerializeField] private MeshCollider m_KeyMesh;
         private bool m_IsReleased = false;
         private bool m_HasBeenGrabbed = false;
         private bool m_InRangeOfTriggerAnimation = false;
@@ -32,7 +34,12 @@ namespace UnityEngine.XR.Interaction.Toolkit
 
                 if (m_HasBeenGrabbed && m_IsReleased && m_InRangeOfTriggerAnimation)
                 {
-                    Destroy(m_Key);
+                    m_Key.transform.position = m_AttachPoint.position;
+                    m_Key.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+                    m_Key.GetComponent<Rigidbody>().useGravity = false;
+                    m_KeyMesh.enabled = false;
+                    m_KeyAnimator.enabled = true;
+                    m_KeyAnimator.SetTrigger("KeyRotation");
                     StartCoroutine(WaitForKeyToOpen());
                     m_HasBeenGrabbed = false;
                 }
@@ -51,7 +58,6 @@ namespace UnityEngine.XR.Interaction.Toolkit
         IEnumerator WaitForKeyToOpen()
         {
             yield return new WaitForSeconds(0.7f);
-
             m_DoorAnimator.SetTrigger("KeyAnimCompleted");
 
         }

@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class DestroyAnimKey : MonoBehaviour
 {
+
     public void Destroy()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        Debug.Log("Should Disappear");
     }
 }
