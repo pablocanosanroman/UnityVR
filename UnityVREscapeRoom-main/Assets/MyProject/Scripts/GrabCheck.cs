@@ -23,7 +23,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
 
         private void Update()
         {
-            if(m_ObjectGrabbed.isSelected)
+            if (m_ObjectGrabbed.isSelected)
             {
                 //Debug.Log("held");
                 m_HasBeenGrabbed = true;
@@ -36,7 +36,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
                 m_IsReleased = true;
             }
 
-            if(m_HasBeenGrabbed && m_IsReleased && !m_Dropped)
+            if (m_HasBeenGrabbed && m_IsReleased && !m_Dropped)
             {
                 m_Dropped = true;
                 Debug.Log("Dropped");
