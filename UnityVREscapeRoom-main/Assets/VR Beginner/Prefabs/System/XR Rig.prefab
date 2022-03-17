@@ -1556,7 +1556,6 @@ GameObject:
   - component: {fileID: 1837324663945620829}
   - component: {fileID: 1837324663945620824}
   - component: {fileID: 1837324663945620828}
-  - component: {fileID: 1837324663945620831}
   - component: {fileID: 1358349929}
   - component: {fileID: 1358349930}
   m_Layer: 9
@@ -1685,19 +1684,6 @@ MonoBehaviour:
   m_PlayHapticsOnHoverExit: 0
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
---- !u!135 &1837324663945620831
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837324663945620818}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.09
-  m_Center: {x: 0, y: 0, z: 0.05}
 --- !u!114 &1358349929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1843,7 +1829,6 @@ GameObject:
   - component: {fileID: 1837324665045843318}
   - component: {fileID: 1837324665045843325}
   - component: {fileID: 1837324665045843313}
-  - component: {fileID: 1837324665045843312}
   - component: {fileID: 8509901044822395909}
   - component: {fileID: 6341845782098252963}
   m_Layer: 9
@@ -1948,19 +1933,6 @@ MonoBehaviour:
   m_PlayHapticsOnHoverExit: 0
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
---- !u!135 &1837324665045843312
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837324665045843319}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.09
-  m_Center: {x: 0, y: 0, z: 0.05}
 --- !u!114 &8509901044822395909
 MonoBehaviour:
   m_ObjectHideFlags: 0
