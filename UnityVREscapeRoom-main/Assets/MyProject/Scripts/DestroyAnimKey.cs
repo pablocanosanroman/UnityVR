@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class DestroyAnimKey : MonoBehaviour
 {
-
     public void Destroy()
     {
         gameObject.SetActive(false);

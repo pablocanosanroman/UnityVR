@@ -8,10 +8,8 @@ public class ButtonSystem : MonoBehaviour
     [SerializeField] private BlueButton m_BlueButton;
     [SerializeField] private GreenButton m_GreenButton;
     [SerializeField] private RedButton m_RedButton;
-    [SerializeField] private GameObject m_SocketPilarOne;
-    [SerializeField] private GameObject m_SocketPilarTwo;
+    [SerializeField] private GameObject m_SocketPilars;
     [SerializeField] private GameObject m_Spheres;
-    private bool m_AllButtonsPressed;
 
     private void Start()
     {
@@ -25,6 +23,7 @@ public class ButtonSystem : MonoBehaviour
     {
         if(!m_Buttons.Contains(ptr.gameObject))
         {
+            Debug.Log("Blue button pressed");
             m_Buttons.Add(ptr.gameObject);
         }
 
@@ -34,6 +33,7 @@ public class ButtonSystem : MonoBehaviour
     {
         if (!m_Buttons.Contains(ptr.gameObject))
         {
+            Debug.Log("Green button pressed");
             m_Buttons.Add(ptr.gameObject);
         }
 
@@ -43,6 +43,7 @@ public class ButtonSystem : MonoBehaviour
     {
         if (!m_Buttons.Contains(ptr.gameObject))
         {
+            Debug.Log("Red button pressed");
             m_Buttons.Add(ptr.gameObject);
         }
 
@@ -51,34 +52,31 @@ public class ButtonSystem : MonoBehaviour
 
     private void CheckList()
     {
-        if (m_Buttons.Count < 3) return ;
+        if (m_Buttons.Count < 3) return;
 
-        
-        m_AllButtonsPressed = true;
-        if (m_AllButtonsPressed)
+        Debug.Log("All pressed");
+        if (m_BlueButton.gameObject != m_Buttons[0] || m_GreenButton.gameObject != m_Buttons[1] || m_RedButton.gameObject != m_Buttons[2])
         {
-            if (m_BlueButton != m_Buttons[0] || m_GreenButton != m_Buttons[1] || m_RedButton != m_Buttons[2])
-            {
-                m_AllButtonsPressed = false;
-                m_BlueButton.m_BlueButtonPressed = false;
-                m_BlueButton.m_BlueLight.SetActive(false);
+            //m_AllButtonsPressed = false;
+            m_BlueButton.m_BlueButtonPressed = false;
+            m_BlueButton.m_BlueLight.SetActive(false);
 
-                m_RedButton.m_RedButtonPressed = false;
-                m_RedButton.m_RedLight.SetActive(false);
+            m_RedButton.m_RedButtonPressed = false;
+            m_RedButton.m_RedLight.SetActive(false);
 
-                m_GreenButton.GetComponent<GreenButton>().m_GreenButtonPressed = false;
-                m_GreenButton.GetComponent<GreenButton>().m_GreenLight.SetActive(false);
+            m_GreenButton.GetComponent<GreenButton>().m_GreenButtonPressed = false;
+            m_GreenButton.GetComponent<GreenButton>().m_GreenLight.SetActive(false);
 
-                m_Buttons.Remove(m_BlueButton.gameObject);
-                m_Buttons.Remove(m_RedButton.gameObject);
-                m_Buttons.Remove(m_GreenButton.gameObject);
-            }
-            else
-            {
-                m_SocketPilarOne.SetActive(true);
-                m_SocketPilarTwo.SetActive(true);
-            }
+            m_Buttons.Remove(m_BlueButton.gameObject);
+            m_Buttons.Remove(m_RedButton.gameObject);
+            m_Buttons.Remove(m_GreenButton.gameObject);
         }
+        else
+        {
+            m_SocketPilars.SetActive(true);
+            m_Spheres.SetActive(true);
+        }
+        
         
 
     }
