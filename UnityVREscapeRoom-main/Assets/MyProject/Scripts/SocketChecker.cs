@@ -8,6 +8,7 @@ public class SocketChecker : MonoBehaviour
     private int m_SocketsPlaced = 0;
 
     [SerializeField] private Animator m_DoorAnimator;
+    [SerializeField] private GameObject m_Room3Teleporters;
 
     public void OnSockedPlaced()
     {
@@ -16,6 +17,7 @@ public class SocketChecker : MonoBehaviour
         if (m_SocketsPlaced == m_MaxChildSockets)
         {
             m_DoorAnimator.SetTrigger("OpenDoor");
+            m_Room3Teleporters.SetActive(true);
         }
     }
 

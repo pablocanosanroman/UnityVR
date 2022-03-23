@@ -8,8 +8,7 @@ public class ButtonSystem : MonoBehaviour
     [SerializeField] private BlueButton m_BlueButton;
     [SerializeField] private GreenButton m_GreenButton;
     [SerializeField] private RedButton m_RedButton;
-    [SerializeField] private GameObject m_SocketPilars;
-    [SerializeField] private GameObject m_Spheres;
+    [SerializeField] private GameObject m_SocketsPuzzle;
 
     private void Start()
     {
@@ -73,8 +72,7 @@ public class ButtonSystem : MonoBehaviour
         }
         else
         {
-            m_SocketPilars.SetActive(true);
-            m_Spheres.SetActive(true);
+            m_SocketsPuzzle.SetActive(true);
         }
         
         

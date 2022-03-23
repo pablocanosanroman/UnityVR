@@ -8,6 +8,9 @@ TagManager:
   - Gun
   - Hand
   - Interruptor
+  - ObjectsToMix
+  - ObjectsToNotMix
+  - FinalObject
   layers:
   - Default
   - TransparentFX
@@ -28,7 +31,7 @@ TagManager:
   - Hand
   - BlueSphere
   - YellowSphere
-  - 
+  - ObjectsToMix
   - 
   - 
   - 
