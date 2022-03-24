@@ -7,7 +7,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
     public class FinalObjectInCaludronCheck : MonoBehaviour
     {
         [SerializeField] private Animator m_DoorAnimator;
-
+        [SerializeField] private GameObject m_Room4Objects;
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("FinalObject"))
@@ -16,6 +16,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
                 {
                     other.gameObject.SetActive(false);
                     m_DoorAnimator.SetTrigger("OpenDoor");
+                    m_Room4Objects.SetActive(true);
                 }
             }
         }
@@ -28,6 +29,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
                 {
                     other.gameObject.SetActive(false);
                     m_DoorAnimator.SetTrigger("OpenDoor");
+                    m_Room4Objects.SetActive(true);
                 }
             }
         }
