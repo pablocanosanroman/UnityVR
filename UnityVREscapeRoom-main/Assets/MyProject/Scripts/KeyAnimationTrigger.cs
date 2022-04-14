@@ -11,11 +11,16 @@ namespace UnityEngine.XR.Interaction.Toolkit
         [SerializeField] private Animator m_DoorAnimator;
         [SerializeField] private Animator m_KeyAnimator;
         [SerializeField] private GameObject m_Room2;
+        private AudioManager m_AudioManager;
         //[SerializeField] private MeshCollider m_KeyMesh;
         //private bool m_IsReleased = false;
         //private bool m_HasBeenGrabbed = false;
         //private bool m_InRangeOfTriggerAnimation = false;
 
+        private void Start()
+        {
+            m_AudioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();    
+        }
 
         public void OnSocketPlaced()
         {
@@ -84,6 +89,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
         {
             yield return new WaitForSeconds(0.7f);
             m_DoorAnimator.SetTrigger("OpenDoor");
+            m_AudioManager.Play("OpeningDoor");
 
         }
     }

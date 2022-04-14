@@ -8,6 +8,12 @@ namespace UnityEngine.XR.Interaction.Toolkit
     {
         [SerializeField] private Animator m_DoorAnimator;
         [SerializeField] private GameObject m_Room4Objects;
+        private AudioManager m_AudioManager;
+
+        private void Start()
+        {
+            m_AudioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        }
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("FinalObject"))
@@ -16,6 +22,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
                 {
                     other.gameObject.SetActive(false);
                     m_DoorAnimator.SetTrigger("OpenDoor");
+                    m_AudioManager.Play("OpeningDoor");
                     m_Room4Objects.SetActive(true);
                 }
             }
