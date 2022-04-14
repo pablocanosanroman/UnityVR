@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MyProject/Scenes/Level1.unity
     guid: 5ff136f1bfd1b4f439ebe94b8ca30146
+  - enabled: 1
+    path: Assets/MyProject/Scenes/LossScreen.unity
+    guid: 3d3a8e303d5b34244a58e59ee79686e0
+  - enabled: 1
+    path: Assets/MyProject/Scenes/WinScreen.unity
+    guid: ac14b60a0d58e0648acee4b1fb9f54c3
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 398d945149746a94899cafbfeddf8c9f,
       type: 2}

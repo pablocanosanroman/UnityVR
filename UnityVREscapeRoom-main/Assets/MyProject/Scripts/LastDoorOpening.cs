@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LastDoorOpening : MonoBehaviour
 {
@@ -10,5 +11,6 @@ public class LastDoorOpening : MonoBehaviour
     public void OpeningDoors()
     {
         m_LastDoor.SetTrigger("OpeningLastDoor");
+        SceneManager.LoadScene("WinScreen");
     }
 }
