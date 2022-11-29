@@ -1,4 +1,0 @@
-repository "VR_Tutorials@CaNOP_32@cloud"
-  path "/"
-    br "/main"
-    co "/main"
